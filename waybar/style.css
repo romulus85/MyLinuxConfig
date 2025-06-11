@@ -1,0 +1,54 @@
+#clock {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#memory {
+	color: #00ff00;
+	padding: 0px 10px;
+}
+
+#pulseaudio {
+	color: #007bff;
+	padding: 0px 10px;
+}
+
+#tray {
+	padding: 0px 10px;
+	background-color: #333333;
+}
+
+#workspaces {
+	background-color: #333333;
+	color: #ffffff;
+	border-radius: 4px;
+	padding: 5px;
+}
+
+#workspaces .workspace {
+	margin: 0 4px;
+	padding: 3px 6px;
+	border-radius: 3px;
+	color: #888888;
+	/* Color por defecto */
+}
+
+#workspaces .active {
+	background-color: #007bff;
+	/* Fondo azul */
+	color: #ffffff;
+	/* Texto blanco */
+	font-weight: bold;
+}
+
+#workspaces .urgent {
+	background-color: #ff0000;
+	/* Fondo rojo */
+	color: #ffffff;
+}
+
+#workspaces .visible {
+	background-color: #444444;
+	/* Fondo gris para workspaces visibles */
+	color: #ffffff;
+}

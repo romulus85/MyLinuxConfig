@@ -1,0 +1,45 @@
+{
+    "layer": "top", // Barra superior
+    "position": "top",
+    "custom-modules": {
+        "custom/weather": {
+            "exec": "curl wttr.in/Chiclana?format=4",
+            "interval": 600
+        }
+    },
+    "modules-left": [
+        "sway/workspaces",
+        "memory",
+        "sway/window"
+    ], // Memoria RAM en la izquierda
+    "modules-center": [
+        "clock"
+    ], // Hora en el centro
+    "modules-right": [
+        "pulseaudio",
+        "custom/weather",
+        "tray"
+    ], // Sonido a la derecha
+    "tray": {
+        "icon-size": 18, // Tamaño de los iconos
+        "tooltip": true // Opcional: habilita tooltips al pasar el cursor
+    },
+    "clock": {
+        "interval": 60,
+        "format": "{:%H:%M}", // Formato de hora
+        "tooltip-format": "{:%A, %d de %B de %Y}" // Tooltip con más detalle
+    },
+    "memory": {
+        "format": "{used:.1f} GB / {total:.1f} GB", // Muestra en GB con un decimal
+        "tooltip": true, // Opcional: activa un tooltip con más detalles
+        "max-ram": 1e9 // Convierte el valor de bytes a gigabytes
+    },
+    "pulseaudio": {
+        "format": "{volume}%" // Muestra el porcentaje de volumen
+    },
+    "sway/workspaces": {
+        "disable-scroll": false, // Permite cambiar de workspace con el scroll
+        "persistent": false, // Solo muestra workspaces activos
+        "disable-marked": false // Muestra workspaces marcados como urgentes
+    }
+}
