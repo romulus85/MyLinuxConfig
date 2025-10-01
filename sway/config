@@ -42,11 +42,13 @@ include /etc/sway/config-vars.d/*
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+exec_always kanshi
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_2048x1536.png fill
-output DP-2 mode --custom 5120x1440@30Hz
-output DP-1 mode --custom 5120x1440@30Hz
-output HDMI-1 mode --custom 5120x1440@30Hz
-output eDP-1 disable
+# output DP-2 mode --custom 5120x1440@30Hz
+# output DP-1 mode --custom 5120x1440@30Hz
+# output HDMI-1 mode --custom 5120x1440@30Hz
+# output eDP-1 disable
+
 # 3840x1080@60Hz
 # 5120x1440@60Hz
 #
@@ -169,7 +171,7 @@ output eDP-1 disable
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
+    bindsym $mod+s layout stacking21
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
@@ -184,6 +186,8 @@ output eDP-1 disable
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+    bindsym $mod+Control+s sticky toggle
 #
 # Scratchpad:
 #

@@ -1,0 +1,13 @@
+profile dock-dp1 {
+  output DP-1 mode 5120x1440@30Hz position 0,0
+  output eDP-1 disable
+}
+
+profile dock-dp2 {
+  output DP-2 mode 5120x1440@30Hz position 0,0
+  output eDP-1 disable
+}
+
+profile solo-portatil {
+  output eDP-1 enable
+}
