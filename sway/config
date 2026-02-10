@@ -44,8 +44,8 @@ include /etc/sway/config-vars.d/*
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 exec_always kanshi
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_2048x1536.png fill
-# output DP-2 mode --custom 5120x1440@30Hz
-# output DP-1 mode --custom 5120x1440@30Hz
+output DP-2 mode --custom 5120x1440@30Hz
+output DP-1 mode --custom 5120x1440@30Hz
 # output HDMI-1 mode --custom 5120x1440@30Hz
 # output eDP-1 disable
 
@@ -274,7 +274,7 @@ exec_always --no-startup-id ~/.config/sway/scratch_apps.sh
 # Note: You can use `swaymsg -t get_tree | grep -A 10 -i class` to find the app_id or title of your applications.
 assign [instance="jetbrains-idea"] workspace 1
 assign [app_id="kitty"] workspace 1
-assign [instance="code"] workspace 2
+assign [instance="code"] workspace 1 
 assign [instance="microsoft-edge"] workspace 2
 assign [instance="spotify"] workspace 3
 assign [app_id="telegram-desktop_telegram-desktop"] workspace 3
