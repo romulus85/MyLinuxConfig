@@ -239,10 +239,7 @@ bindsym $mod+r mode "resize"
 #         inactive_workspace #32323200 #32323200 #5c5c5c
 #     }
 # }
-exec_always {
-    pkill waybar
-    waybar
-}
+exec_always sh -c 'pkill waybar; waybar'
 
 # or input <identifier>
 input "type:keyboard" {
@@ -272,13 +269,13 @@ exec_always --no-startup-id ~/.config/sway/scratch_apps.sh
 
 # Apps for specific workspaces
 # Note: You can use `swaymsg -t get_tree | grep -A 10 -i class` to find the app_id or title of your applications.
-assign [instance="jetbrains-idea"] workspace 1
+assign [app_id="jetbrains-idea"] workspace 1
 assign [app_id="kitty"] workspace 1
-assign [instance="code"] workspace 1 
-assign [instance="microsoft-edge"] workspace 2
-assign [instance="spotify"] workspace 3
-assign [app_id="telegram-desktop_telegram-desktop"] workspace 3
-assign [instance="crx__hnpfjngllnobngcgfapefoaidbinmjnm"] workspace 3
+assign [app_id="code"] workspace 1
+assign [shell="xwayland" title=".*edge.*"] workspace 2
+assign [shell="xwayland" title=".*Spotify.*"] workspace 3
+assign [app_id="org.telegram.desktop"] workspace 3
+assign [shell="xwayland" title=".*hnpfjngllnobngcgfapefoaidbinmjnm.*"] workspace 3
 
 exec_always --no-startup-id ~/.config/sway/autostart-apps.sh
 

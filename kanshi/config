@@ -1,11 +1,13 @@
 profile dock-dp1 {
   output DP-1 mode 5120x1440@30Hz position 0,0
   output eDP-1 disable
+  exec swaymsg '[workspace="1"] move workspace to output DP-1; [workspace="2"] move workspace to output DP-1; [workspace="3"] move workspace to output DP-1; [workspace="4"] move workspace to output DP-1'
 }
 
 profile dock-dp2 {
   output DP-2 mode 5120x1440@30Hz position 0,0
   output eDP-1 disable
+  exec swaymsg '[workspace="1"] move workspace to output DP-2; [workspace="2"] move workspace to output DP-2; [workspace="3"] move workspace to output DP-2; [workspace="4"] move workspace to output DP-2'
 }
 
 profile solo-portatil {
