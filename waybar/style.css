@@ -1,54 +1,152 @@
-#clock {
-	font-size: 18px;
-	font-weight: bold;
+* {
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+    font-size: 14px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+window#waybar > box {
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Estilo base para todos los módulos */
+.modules-left > widget > *,
+.modules-center > widget > *,
+.modules-right > widget > * {
+    background-color: #313244;
+    border-radius: 8px;
+    margin: 4px 3px;
+    padding: 6px 12px;
+}
+
+/* ── Izquierda ── */
+#workspaces {
+    background-color: transparent;
+    padding: 0;
+    margin: 4px 3px;
+}
+
+#workspaces button {
+    background-color: #313244;
+    color: #6c7086;
+    border-radius: 6px;
+    margin: 2px 2px;
+    padding: 2px 10px;
+    min-width: 0;
+    transition: all 0.2s ease;
+}
+
+#workspaces button:hover {
+    background-color: #45475a;
+    color: #cdd6f4;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+    background-color: #89b4fa;
+    color: #1e1e2e;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background-color: #f38ba8;
+    color: #1e1e2e;
+}
+
+#workspaces button.visible {
+    background-color: #45475a;
+    color: #cdd6f4;
 }
 
 #memory {
-	color: #00ff00;
-	padding: 0px 10px;
+    color: #a6e3a1;
 }
 
+#window {
+    color: #bac2de;
+    font-style: italic;
+}
+
+/* ── Centro ── */
+#clock {
+    font-size: 15px;
+    font-weight: bold;
+    color: #cba6f7;
+    letter-spacing: 0.5px;
+}
+
+/* ── Derecha ── */
 #pulseaudio {
-	color: #007bff;
-	padding: 0px 10px;
+    color: #89b4fa;
+}
+
+#pulseaudio.muted {
+    color: #6c7086;
 }
 
 #tray {
-	padding: 0px 10px;
-	background-color: #333333;
+    background-color: #313244;
 }
 
-#workspaces {
-	background-color: #333333;
-	color: #ffffff;
-	border-radius: 4px;
-	padding: 5px;
+#tray > .passive {
+    -gtk-icon-effect: dim;
 }
 
-#workspaces .workspace {
-	margin: 0 4px;
-	padding: 3px 6px;
-	border-radius: 3px;
-	color: #888888;
-	/* Color por defecto */
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #f38ba8;
+    border-radius: 8px;
 }
 
-#workspaces .active {
-	background-color: #007bff;
-	/* Fondo azul */
-	color: #ffffff;
-	/* Texto blanco */
-	font-weight: bold;
+/* Custom weather */
+#custom-weather {
+    color: #fab387;
 }
 
-#workspaces .urgent {
-	background-color: #ff0000;
-	/* Fondo rojo */
-	color: #ffffff;
+#mpris {
+    color: #a6e3a1;
 }
 
-#workspaces .visible {
-	background-color: #444444;
-	/* Fondo gris para workspaces visibles */
-	color: #ffffff;
+#custom-vpn {
+    color: #a6e3a1;
+}
+
+#cpu {
+    color: #89dceb;
+}
+
+#temperature {
+    color: #a6e3a1;
+}
+
+#temperature.critical {
+    color: #f38ba8;
+}
+
+#disk {
+    color: #f9e2af;
+}
+
+#network {
+    color: #89b4fa;
+}
+
+#network.disconnected {
+    color: #6c7086;
+}
+
+#bluetooth {
+    color: #cba6f7;
+}
+
+#bluetooth.disconnected {
+    color: #6c7086;
 }

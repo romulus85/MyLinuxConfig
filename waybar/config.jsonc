@@ -1,45 +1,95 @@
 {
     "layer": "top", // Barra superior
     "position": "top",
-    "custom-modules": {
-        "custom/weather": {
-            "exec": "curl wttr.in/Chiclana?format=4",
-            "interval": 600
-        }
+    "margin-top": 4,
+    "margin-left": 10,
+    "margin-right": 10,
+    "font": "JetBrainsMono Nerd Font 13",
+    "custom/vpn": {
+        "exec": "/home/cx02913/.config/waybar/scripts/vpn.sh",
+        "interval": 10,
+        "tooltip": false
+    },
+    "custom/weather": {
+        "exec": "curl -s wttr.in/Chiclana?format=4",
+        "interval": 600
     },
     "modules-left": [
         "sway/workspaces",
+        "cpu",
+        "temperature",
         "memory",
+        "disk",
         "sway/window"
-    ], // Memoria RAM en la izquierda
+    ],
     "modules-center": [
+        "mpris",
         "clock"
-    ], // Hora en el centro
+    ],
     "modules-right": [
+        "custom/vpn",
+        "bluetooth",
+        "network",
         "pulseaudio",
         "custom/weather",
         "tray"
-    ], // Sonido a la derecha
+    ],
     "tray": {
-        "icon-size": 18, // Tamaño de los iconos
-        "tooltip": true // Opcional: habilita tooltips al pasar el cursor
+        "icon-size": 18,
+        "tooltip": true
     },
     "clock": {
         "interval": 60,
-        "format": "{:%H:%M}", // Formato de hora
-        "tooltip-format": "{:%A, %d de %B de %Y}" // Tooltip con más detalle
+        "format": "{:%d/%m   %H:%M}",
+        "tooltip-format": "{:%A, %d de %B de %Y}"
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "CPU {usage}%",
+        "tooltip": true
+    },
+    "temperature": {
+        "interval": 5,
+        "format": "{temperatureC}°C",
+        "tooltip": false
     },
     "memory": {
-        "format": "{used:.1f} GB / {total:.1f} GB", // Muestra en GB con un decimal
-        "tooltip": true, // Opcional: activa un tooltip con más detalles
-        "max-ram": 1e9 // Convierte el valor de bytes a gigabytes
+        "format": "RAM {used:.1f}/{total:.1f} GB",
+        "tooltip": true
+    },
+    "disk": {
+        "interval": 30,
+        "format": "DISK {free}",
+        "path": "/"
+    },
+    "network": {
+        "interval": 5,
+        "format-ethernet": "{ifname} ↑{bandwidthUpBytes} ↓{bandwidthDownBytes}",
+        "format-wifi": "{essid} ↑{bandwidthUpBytes} ↓{bandwidthDownBytes}",
+        "format-disconnected": "Sin red",
+        "tooltip-format": "{ipaddr}"
+    },
+    "bluetooth": {
+        "format": "BT {status}",
+        "format-connected": "BT {device_alias}",
+        "tooltip-format": "{controller_alias} — {controller_address}",
+        "on-click": "blueman-manager"
+    },
+    "mpris": {
+        "player": "spotify",
+        "format": "{player_icon} {artist} — {title}",
+        "format-paused": "{status_icon} {artist} — {title}",
+        "player-icons": { "spotify": "" },
+        "status-icons": { "paused": "" },
+        "max-length": 60,
+        "on-click": "playerctl play-pause"
     },
     "pulseaudio": {
-        "format": "{volume}%" // Muestra el porcentaje de volumen
+        "format": "VOL {volume}%"
     },
     "sway/workspaces": {
-        "disable-scroll": false, // Permite cambiar de workspace con el scroll
-        "persistent": false, // Solo muestra workspaces activos
-        "disable-marked": false // Muestra workspaces marcados como urgentes
+        "disable-scroll": false,
+        "persistent": false,
+        "disable-marked": false
     }
 }
