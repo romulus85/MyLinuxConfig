@@ -8,8 +8,8 @@ sleep 10
 
 # Workspace 1
 swaymsg "workspace 1"
-if ! already_running "class" "jetbrains-idea"; then
-  swaymsg exec '/home/cx02913/.local/share/JetBrains/Toolbox/scripts/idea-ultimate'
+if ! already_running "app_id" "OpenCode"; then
+  swaymsg exec 'OpenCode'
   sleep 10
 fi
 if ! already_running "app_id" "kitty"; then
@@ -23,6 +23,7 @@ fi
 swaymsg "workspace 2"
 if ! already_running "class" "microsoft-edge"; then
   swaymsg exec 'microsoft-edge'
+  sleep 5
 fi
 
 # Workspace 3
